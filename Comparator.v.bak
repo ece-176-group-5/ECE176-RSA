@@ -1,0 +1,9 @@
+module Comparator(
+  output F,
+  input L,
+  input e
+  );
+  
+F=(e<L);
+
+endmodule
