@@ -1,8 +1,9 @@
-module Gated_D_Latch(
-  output e_o,
-  input e_i,
-  input en
-  );
+module Gated_D_Latch(e_o, e_i, en);
+  
+  parameter size =4;
+  output [(size-1):0]e_o;
+  input [(size-1):0]e_i;
+  input en;
   
   assign e_o = en? e_i:1'bZ;
   

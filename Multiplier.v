@@ -1,9 +1,10 @@
-module Multiplier( 
-  output reg F,
-  input q,
-  input p,
-  input Load
-  );
+module Multiplier(F, q, p, Load);
+  
+  parameter size =4;
+  output reg [((size*2)-1):0]F;
+  input [(size-1):0]q;
+  input [(size-1):0]p;
+  input Load;
   
   always @(posedge Load)
     F=q*p;

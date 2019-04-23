@@ -2,13 +2,16 @@ library verilog;
 use verilog.vl_types.all;
 entity Prime_Number_Generator is
     generic(
-        n               : vl_notype
+        n               : integer := 20;
+        m               : integer := 5
     );
     port(
-        p               : out    vl_logic;
-        q               : out    vl_logic;
-        e               : out    vl_logic
+        p               : out    vl_logic_vector;
+        q               : out    vl_logic_vector;
+        e               : out    vl_logic_vector;
+        clk             : in     vl_logic
     );
     attribute mti_svvh_generic_type : integer;
-    attribute mti_svvh_generic_type of n : constant is 5;
+    attribute mti_svvh_generic_type of n : constant is 1;
+    attribute mti_svvh_generic_type of m : constant is 1;
 end Prime_Number_Generator;

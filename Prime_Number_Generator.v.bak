@@ -1,11 +1,55 @@
-module Prime_Number_Generator(
-  output p,
-  output q,
-  output e
-  );
+module Prime_Number_Generator(p,q,e,clk);
 
-parameter n;  // Highest value it will check for a prime number
+parameter n = 10;  // Limit for a prime number
+parameter m = 4;    // How many bits the value needs
 
+output reg [m-1:0]p;
+output reg [m-1:0]q;
+output reg [m-1:0]e;
+input clk;            // Added clk
+  
+integer k=0;
 
+wire [(m-1):0]possible_primes[(n-1):0];
+wire [(m-1):0]primes[(n-1):0];
 
+// Fill with numbers
+genvar i,j, h;
+generate
+  for(i=0; i<n; i=i+1)begin 
+      assign possible_primes[i]=i+2;
+    end // for i
+       
+// Sort through the numbers to find the prime numbers    
+  for(h=0; h<n; h=h+1)begin 
+    for(j=2; j<(n/2); j=j+1)begin
+       
+        assign primes[h]=possible_primes[h]*(possible_primes[h]%j!=0 | possible_primes[h]==j);        
+        
+      end // for j
+  end // for h   
+   
+endgenerate
+
+// Output random prime numbers 
+always @(posedge clk) begin
+  if(primes[k]!=0)
+    p=primes[k];
+   
+    k=k+1;
+    if(k==n)  k=0;
+      
+  if (primes[k]!=0)
+    q=primes[k];
+    
+    k=k+1;
+    if(k==n)  k=0;
+      
+  if (primes[k]!=0)
+    e=primes[k];
+ 
+    k=k+1;
+    if(k==n)  k=0;
+end // always block
+      
 endmodule
