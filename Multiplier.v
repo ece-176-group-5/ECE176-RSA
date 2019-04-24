@@ -6,7 +6,7 @@ module Multiplier(F, q, p, Load);
   input [(size-1):0]p;
   input Load;
   
-  always @(posedge Load)
+  always @(*)
     F=q*p;
     
   endmodule

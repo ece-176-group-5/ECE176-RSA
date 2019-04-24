@@ -9,7 +9,9 @@ module Fast_Modular_Exponentiator(out, base, modulus, exponent, st, clk, reset);
   input [exponent_N-1:0] exponent;
   input st, clk, reset;
 
+  if(st==1)begin
     always@(posedge clk & st==1)
       out = (base ** exponent) % modulus;
+    end
 
 endmodule

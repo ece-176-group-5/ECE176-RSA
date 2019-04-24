@@ -33,23 +33,23 @@ endgenerate
 
 // Output random prime numbers 
 always @(posedge clk) begin
-  if(primes[k]!=0)
+  if(primes[k]>0)
     p=primes[k];
    
     k=k+1;
-    if(k==n)  k=0;
+    if(k==(n+1))  k=0;
       
-  if (primes[k]!=0)
+  if (primes[k]>0)
     q=primes[k];
     
     k=k+1;
-    if(k==n)  k=0;
+    if(k==(n+1))  k=0;
       
-  if (primes[k]!=0)
+  if (primes[k]>0)
     e=primes[k];
  
     k=k+1;
-    if(k==n)  k=0;
+    if(k==(n+1))  k=0;
 end // always block
       
 endmodule

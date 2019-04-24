@@ -1,7 +1,7 @@
 module Prime_Number_Generator(p,q,e,clk);
 
-parameter n = 10;  // Limit for a prime number
-parameter m = 4;    // How many bits the value needs
+parameter n = 20;  // Limit for a prime number
+parameter m = 5;    // How many bits the value needs
 
 output reg [m-1:0]p;
 output reg [m-1:0]q;
@@ -33,19 +33,19 @@ endgenerate
 
 // Output random prime numbers 
 always @(posedge clk) begin
-  if(primes[k]!=0)
+  if(primes[k]>0)
     p=primes[k];
    
     k=k+1;
     if(k==n)  k=0;
       
-  if (primes[k]!=0)
+  if (primes[k]>0 & primes[k]!=z;)
     q=primes[k];
     
     k=k+1;
     if(k==n)  k=0;
       
-  if (primes[k]!=0)
+  if (primes[k]>0)
     e=primes[k];
  
     k=k+1;

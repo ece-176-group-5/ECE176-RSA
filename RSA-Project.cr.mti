@@ -5,19 +5,19 @@ Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 Top level modules:
 	d_Divider
 
-} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/State_Machine_Key_Generator.v {1 {vlog -work work C:/Users/User/Documents/GitHub/ECE176-RSA/State_Machine_Key_Generator.v
-Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
--- Compiling module State_Machine_Key_Generator
-
-Top level modules:
-	State_Machine_Key_Generator
-
 } {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Prime_Number_Generator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Prime_Number_Generator.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 -- Compiling module Prime_Number_Generator
 
 Top level modules:
 	Prime_Number_Generator
+
+} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/State_Machine_Key_Generator.v {1 {vlog -work work C:/Users/User/Documents/GitHub/ECE176-RSA/State_Machine_Key_Generator.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module State_Machine_Key_Generator
+
+Top level modules:
+	State_Machine_Key_Generator
 
 } {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/RSA_TB.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/RSA_TB.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
@@ -35,6 +35,20 @@ Top level modules:
 
 } {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Instructions.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Instructions.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+
+} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Key_Generator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Key_Generator.v
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module Key_Generator
+
+Top level modules:
+	Key_Generator
+
+} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Key_Generator_tb.vt {1 {vlog -work work C:/Users/User/Documents/GitHub/ECE176-RSA/Key_Generator_tb.vt
+Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
+-- Compiling module Key_Generator_tb
+
+Top level modules:
+	Key_Generator_tb
 
 } {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Seven_Segment_Decoder.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Seven_Segment_Decoder.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
@@ -71,12 +85,12 @@ Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 Top level modules:
 	Multiplier
 
-} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Comparator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Comparator.v
+} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Fast_Modular_Exponentiator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Fast_Modular_Exponentiator.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
--- Compiling module Comparator
+-- Compiling module Fast_Modular_Exponentiator
 
 Top level modules:
-	Comparator
+	Fast_Modular_Exponentiator
 
 } {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Top_Module.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Top_Module.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
@@ -85,11 +99,11 @@ Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
 Top level modules:
 	Top_Module
 
-} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Fast_Modular_Exponentiator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Fast_Modular_Exponentiator.v
+} {} {}} C:/Users/User/Documents/GitHub/ECE176-RSA/Comparator.v {1 {vlog -work 176Project C:/Users/User/Documents/GitHub/ECE176-RSA/Comparator.v
 Model Technology ModelSim ALTERA vlog 10.1b Compiler 2012.04 Apr 27 2012
--- Compiling module Fast_Modular_Exponentiator
+-- Compiling module Comparator
 
 Top level modules:
-	Fast_Modular_Exponentiator
+	Comparator
 
 } {} {}}
