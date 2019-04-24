@@ -1,7 +1,7 @@
 `include "Instructions.v"
 
 module Data(
-    output reg [55:0] data,
+    output reg [31:0] data,
     output done,
     input [2:0] data_control,
     input [17:0] switches,
@@ -11,7 +11,7 @@ module Data(
   wire [555:0] n, e, d;
   wire [555:0] encrypted, decrypted;
 
-  Key_Generator KG(
+  Key_Generator #(556) KG(
     .n, .e, .d, .done,
     .st(data_control == `Generate),
     .clk, .reset

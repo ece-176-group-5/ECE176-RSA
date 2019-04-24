@@ -1,7 +1,7 @@
 `timescale 1ns/1ns
 
 module RSA_TB;
-  wire [31:0] HEX;
+  wire [63:0] HEX;
   reg [3:0] KEY;
   reg [17:0] SW;
   reg clk, reset;
