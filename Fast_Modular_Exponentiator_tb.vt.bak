@@ -1,0 +1,1 @@
+module Fast_Modular_Exponentiator(out, base, modulus, exponent, st, clk, reset);

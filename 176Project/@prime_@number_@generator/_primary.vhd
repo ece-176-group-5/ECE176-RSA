@@ -8,7 +8,7 @@ entity Prime_Number_Generator is
     port(
         p               : out    vl_logic_vector;
         q               : out    vl_logic_vector;
-        e               : out    vl_logic_vector;
+        e_w             : out    vl_logic_vector;
         clk             : in     vl_logic
     );
     attribute mti_svvh_generic_type : integer;

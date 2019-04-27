@@ -6,7 +6,9 @@ module Multiplier(F, q, p, Load);
   input [(size-1):0]p;
   input Load;
   
-  always @(*)
+  always @(*) begin
     F=q*p;
+    $display("p=%d, q=%d", p, q);
+  end
     
   endmodule

@@ -1,14 +1,14 @@
-module Prime_Number_Generator(p,q,e,clk);
+module Prime_Number_Generator(p,q,e_w,clk);
 
 parameter n = 20;  // Limit for a prime number
 parameter m = 5;    // How many bits the value needs
 
 output reg [m-1:0]p;
 output reg [m-1:0]q;
-output reg [m-1:0]e;
+output reg [m-1:0]e_w;
 input clk;            // Added clk
   
-integer k=0;
+integer k=0;          // Holder variable
 
 wire [(m-1):0]possible_primes[(n-1):0];
 wire [(m-1):0]primes[(n-1):0];
@@ -46,7 +46,7 @@ always @(posedge clk) begin
     if(k==(n+1))  k=0;
       
   if (primes[k]>0)
-    e=primes[k];
+    e_w=primes[k];
  
     k=k+1;
     if(k==(n+1))  k=0;

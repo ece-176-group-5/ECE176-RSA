@@ -6,7 +6,7 @@ entity d_Divider is
         k               : integer := 2
     );
     port(
-        d               : out    vl_logic_vector;
+        d_w             : out    vl_logic_vector;
         e               : in     vl_logic_vector;
         L               : in     vl_logic_vector
     );
