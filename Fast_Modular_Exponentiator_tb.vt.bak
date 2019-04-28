@@ -12,8 +12,9 @@ module Fast_Modular_Exponentiator_tb();
   
   Fast_Modular_Exponentiator t2(.out, .base, .modulus, .exponent, .st, .clk, .reset);
   
-  // Using a Testcase from Wikipedia
+  // Using a Testcases from...
   // https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Example
+  //https://www.di-mgt.com.au/rsa_alg.html
   initial begin
     base=65;
     modulus=3233;
@@ -23,11 +24,29 @@ module Fast_Modular_Exponentiator_tb();
     reset=0;
     #60
     st=1;
+    //Expected out= 2790
+    #40
+    st=0;
+    #60
+    st=1;
+    base=16187; 
+    exponent=3;
+    modulus =25777; 
+    // Expected out= 24465
+    #60
+    reset=1;
+    #60
+    base =18524;
+    exponent=16971;
+    modulus = 25777;
+    reset=0;
+    // Expected out = 1289
+   
   end
   
   always #10 clk=~clk;
   
   always @(out)
-    $display($time, "output= %d", out);
+    $display("Time: ", $time, ", Output =%d", out);
   
 endmodule

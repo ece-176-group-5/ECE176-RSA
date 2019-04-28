@@ -10,13 +10,11 @@ module Fast_Modular_Exponentiator(out, base, modulus, exponent, st, clk, reset);
   input [exponent_N-1:0] exponent;
   input st, clk, reset;
   
-  
-  
   reg [base_N-1:0]base_r;
   reg [exponent_N-1:0]exponent_r; 
 
-always @(posedge st, negedge reset) begin
-  if(st) begin
+always @(posedge st, reset) begin
+  if(st & ~reset ) begin
     
     out=1;
     base_r=base;
@@ -30,5 +28,9 @@ while(exponent_r>0) begin
     base_r=(base_r*base_r)% modulus;
   end // end while loop
 end // end if statement
+
+else
+  out=0;
+  
 end // end always block  
 endmodule
