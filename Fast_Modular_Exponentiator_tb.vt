@@ -28,6 +28,6 @@ module Fast_Modular_Exponentiator_tb();
   always #10 clk=~clk;
   
   always @(out)
-    $display($time, "output= %d", out);
+    $display($time, "Output= %d", out);
   
 endmodule
