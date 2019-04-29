@@ -1,8 +1,8 @@
 // Dont think we need clock for this one
 module Fast_Modular_Exponentiator(out, base, modulus, exponent, st, clk, reset);
-  parameter base_N = 556;
-  parameter modulus_N = 556;
-  parameter exponent_N = 556;
+  parameter base_N = 55;
+  parameter modulus_N = 55;
+  parameter exponent_N = 55;
 
   output reg[modulus_N-1:0] out;
   input [base_N-1:0] base;

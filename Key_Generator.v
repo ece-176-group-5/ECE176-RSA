@@ -4,7 +4,7 @@ module Key_Generator(n, e, d, done, st, clk, reset);
   input st;
   input clk, reset;
 
-  parameter size = 8;
+  parameter size = 55;
   parameter prime_limit = 512;
 
   output [(size-1):0] e;

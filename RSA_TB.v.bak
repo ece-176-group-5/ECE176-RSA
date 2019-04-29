@@ -16,16 +16,16 @@ module RSA_TB;
     {KEY, SW} = 0;
     clk = 0;
     reset = 1;
-    #100
+    #10
     reset = 0;
-    #200
+    #20
     KEY = 1;
-    #200
+    #20
     KEY = 2;
     SW = 3;
-    #100
+    #10
     KEY = 4;
-    #100
+    #10
     KEY = 8;
   end
 

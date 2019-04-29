@@ -8,7 +8,7 @@ module Data(
     input clk, reset
 );
 
-  wire [54:0] e;
+  wire [54:0] n, e, d;
   wire [109:0] n, d;
   wire [54:0] encrypted, decrypted;
 

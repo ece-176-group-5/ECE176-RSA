@@ -1,11 +1,11 @@
 module Key_Generator_tb();
   
-  parameter size=8;
+  parameter size=55;
   reg clk, st, reset;
   wire [(size-1):0] e;
   wire [(2*size-1):0] n,d;
   wire done;
-  Key_Generator t1(.n, .e, .d, .done, .st, .clk, .reset);
+  Key_Generator #(.size(size)) t1(.n, .e, .d, .done, .st, .clk, .reset);
   
   initial begin
     clk =0;

@@ -27,7 +27,7 @@ Comparator #(.size(size)) b6(.G, .L, .e_w);
 
 Gated_D_Latch #(.size(size)) b7(.e_o(e_possible), .e_i(e_w), .en(G)); //outputs e_w, possible e value
 
-Prime_Number_Generator_Single #(.m(size, .n(prime_limit))) b8(.d_possible, .clk);
+Prime_Number_Generator_Single #(.m(size), .n(prime_limit)) b8(.d_possible, .clk);
 
 d_Divider #(.size(size)) b9(.d_w, .e(e_w), .L, .d_possible); // outputs d_w, possible d value
 

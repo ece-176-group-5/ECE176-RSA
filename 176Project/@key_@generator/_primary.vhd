@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity Key_Generator is
     generic(
-        size            : integer := 8;
+        size            : integer := 55;
         prime_limit     : integer := 512
     );
     port(

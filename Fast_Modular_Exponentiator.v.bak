@@ -14,7 +14,7 @@ module Fast_Modular_Exponentiator(out, base, modulus, exponent, st, clk, reset);
   reg [exponent_N-1:0]exponent_r; 
 
 always @(posedge st, reset) begin
-  if(st & ~reset ) begin
+  if(st & ~reset) begin
     
     out=1;
     base_r=base;
