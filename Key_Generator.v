@@ -5,6 +5,7 @@ module Key_Generator(n, e, d, done, st, clk, reset);
   input clk, reset;
 
   parameter size = 8;
+  parameter prime_limit = 512;
 
   output [(size-1):0] e;
   output [((size*2)-1):0] n, d;
@@ -14,7 +15,7 @@ module Key_Generator(n, e, d, done, st, clk, reset);
   
 State_Machine_Key_Generator b1(.Load, .st, .clk, .reset, .done);
 
-Prime_Number_Generator #(.m(size)) b2(.p, .q, .e_w, .clk);
+Prime_Number_Generator #(.m(size), .n(prime_limit)) b2(.p, .q, .e_w, .clk);
 
 Subtractor_2_input #(.size(size)) b3(.p_sub, .q_sub, .p, .q);
 
@@ -26,7 +27,7 @@ Comparator #(.size(size)) b6(.G, .L, .e_w);
 
 Gated_D_Latch #(.size(size)) b7(.e_o(e_possible), .e_i(e_w), .en(G)); //outputs e_w, possible e value
 
-Prime_Number_Generator_Single #(.m(size)) b8(.d_possible, .clk);
+Prime_Number_Generator_Single #(.m(size), .n(prime_limit)) b8(.d_possible, .clk);
 
 d_Divider #(.size(size)) b9(.d_w, .e(e_w), .L, .d_possible); // outputs d_w, possible d value
 
