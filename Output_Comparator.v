@@ -10,20 +10,20 @@ parameter size=4;
  input [(2*size-1):0]n_w, d_w;
  
  always @* begin
-  if(n_w&e_w&d_w !=0 & Load ==1 & ~(done))begin
+  if((n_w&e_w&d_w > 0) & (Load ==1) & (~done))begin
     done =1;
     n=n_w;
     e=e_w;
     d=d_w;
     $display("n=%d, e=%d, d=%d", n, e, d);
   end
- else if(Load==0) begin
+/* else if(Load==0) begin
     n=0;
     e=0;
     d=0;
     done=0;
   end
-  
+  */
   else
     done=0;
   end

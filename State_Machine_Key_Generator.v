@@ -19,5 +19,14 @@ module State_Machine_Key_Generator(
     else if (start)
       Load=1;
     end
+ /*   
+    always @(posedge clk) begin
+      casex {reset,done, st}
+        1xx: begin
+          Load = 0;
+          start = 0; end
+          01x: begin
+            Load=0
+   */     
     
   endmodule

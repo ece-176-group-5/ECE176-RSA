@@ -7,8 +7,10 @@ module Multiplier(F, q, p, Load);
   input Load;
   
   always @(*) begin
+   // if(Load) begin
     F=q*p;
     $display("p=%d, q=%d", p, q);
+//  end
   end
     
   endmodule

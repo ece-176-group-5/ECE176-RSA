@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity Key_Generator is
     generic(
-        size            : integer := 4
+        size            : integer := 8
     );
     port(
         n               : out    vl_logic_vector;

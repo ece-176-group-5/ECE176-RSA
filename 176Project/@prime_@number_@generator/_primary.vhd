@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity Prime_Number_Generator is
     generic(
-        n               : integer := 20;
+        n               : integer := 512;
         m               : integer := 5
     );
     port(
