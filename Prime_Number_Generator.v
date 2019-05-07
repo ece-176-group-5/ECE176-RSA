@@ -7,49 +7,46 @@ output reg [m-1:0]p;
 output reg [m-1:0]q;
 output reg [m-1:0]e_w;
 input clk;            // Added clk
-  
+
 integer k=0;          // Holder variable
 
-wire [(m-1):0]possible_primes[(n-1):0];
-wire [(m-1):0]primes[(n-1):0];
+reg [255:0] primes [31:0];
 
-// Fill with numbers
-genvar i,j, h;
-generate
-  for(i=0; i<n; i=i+1)begin 
-      assign possible_primes[i]=i+2;
-    end // for i
-       
-// Sort through the numbers to find the prime numbers    
-  for(h=0; h<n; h=h+1)begin 
-    for(j=2; j<(n/2); j=j+1)begin
-       
-        assign primes[h]=possible_primes[h]*(possible_primes[h]%j!=0 | possible_primes[h]==j);        
-        
-      end // for j
-  end // for h   
-   
-endgenerate
+integer file_data;
+integer file;
+integer scanner;
+integer i;
 
-// Output random prime numbers 
+initial begin
+  file = $fopen("C:/Users/Daniel/Documents/GitHub/ECE176-RSA/100_primes.txt", "r");
+  for(i = 0; i < 256; i = i + 1) begin
+    scanner = $fscanf(file, "%d\n", file_data);
+    if (!$feof(file)) begin
+      primes[i] = file_data;
+    end
+  end
+  $fclose(file);
+end
+
+// Output random prime numbers
 always @(posedge clk) begin
   if(primes[k]>0)
     p=primes[k];
-   
+
     k=k+1;
-    if(k==(n+1))  k=0;
-      
+    if(k==(255+1))  k=0;
+
   if (primes[k]>0)
     q=primes[k];
-    
+
     k=k+1;
-    if(k==(n+1))  k=0;
-      
+    if(k==(255+1))  k=0;
+
   if (primes[k]>0)
     e_w=primes[k];
- 
+
     k=k+1;
-    if(k==(n+1))  k=0;
+    if(k==(255+1))  k=0;
 end // always block
-      
+
 endmodule
