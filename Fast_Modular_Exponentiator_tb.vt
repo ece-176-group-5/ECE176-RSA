@@ -1,8 +1,8 @@
 module Fast_Modular_Exponentiator_tb();
   
-  parameter base_N = 556;
-  parameter modulus_N = 556;
-  parameter exponent_N = 556;
+  parameter base_N = 55;
+  parameter modulus_N = 55;
+  parameter exponent_N = 55;
   
   wire [modulus_N-1:0] out;
   reg [base_N-1:0] base;

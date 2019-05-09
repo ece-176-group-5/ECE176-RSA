@@ -4,7 +4,7 @@ module Key_Generator(n, e, d, done, st, clk, reset);
   input st;
   input clk, reset;
 
-  parameter size = 8;
+  parameter size = 55;
   parameter prime_limit = 512;
 
   output [(size-1):0] e;
@@ -33,24 +33,5 @@ d_Divider #(.size(size)) b9(.d_w, .e(e_w), .L, .d_possible); // outputs d_w, pos
 
 Output_Comparator#(.size(size)) b10(.done, .n, .e, .d, .Load, .n_w, .e_w(e_possible), .d_w);
 
-/*always @* begin
-  if(n&e&d !=0 & Load ==1)begin
-    done =1;
-    $display("n=%d, e=%d, d=%d", n, e, d);
-  end
-  else
-    done=0;
-  end
-  
-*/
-
-/*
-initial begin
-  n = 143;
-  e = 7;
-  d = 103;
-  done = 1;
-end
-*/
 
 endmodule

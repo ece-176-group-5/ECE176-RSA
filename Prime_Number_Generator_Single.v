@@ -5,8 +5,7 @@ parameter m = 5;    // How many bits the value needs
 
 output reg [(2*m)-1:0] d_possible;
 
-input clk;            // Added clk
-//input [((m*2)-1):0]L;   
+input clk;            // Added clk  
 integer k=0;          // Holder variable
 
 wire [(m-1):0]possible_primes[(n-1):0];

@@ -11,7 +11,7 @@ module Key_Generator(n, e, d, done, st, clk, reset);
   output [((size*2)-1):0] n, d;
   wire Load, G;
   wire [size-1:0] p, q, p_sub, q_sub, e_w, e_possible;
-  wire [((size*2)-1):0] L, n_w, d_w, d_possible; // removed F
+  wire [((size*2)-1):0] L, n_w, d_w, d_possible;
   
 State_Machine_Key_Generator b1(.Load, .st, .clk, .reset, .done);
 
@@ -33,24 +33,5 @@ d_Divider #(.size(size)) b9(.d_w, .e(e_w), .L, .d_possible); // outputs d_w, pos
 
 Output_Comparator#(.size(size)) b10(.done, .n, .e, .d, .Load, .n_w, .e_w(e_possible), .d_w);
 
-/*always @* begin
-  if(n&e&d !=0 & Load ==1)begin
-    done =1;
-    $display("n=%d, e=%d, d=%d", n, e, d);
-  end
-  else
-    done=0;
-  end
-  
-*/
-
-/*
-initial begin
-  n = 143;
-  e = 7;
-  d = 103;
-  done = 1;
-end
-*/
 
 endmodule

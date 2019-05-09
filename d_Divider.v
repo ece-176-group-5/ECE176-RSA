@@ -1,4 +1,3 @@
-// Ended up not needing "n" based off of the block diagram
 module d_Divider(d_w, d_possible, e, L);
   
   parameter size =4;
@@ -8,9 +7,6 @@ module d_Divider(d_w, d_possible, e, L);
   input [(size-1):0]e;
     
   parameter k=4;  //Can assign k as any integer so long as its smaller than L
-  
-  // assign d_w=((k*L)+1)/e;
-  
   
   always @(*) begin
     if((d_possible*e) % L == 1)

@@ -14,7 +14,7 @@ module Fast_Modular_Exponentiator_tb();
   
   // Using a Testcases from...
   // https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Example
-  //https://www.di-mgt.com.au/rsa_alg.html
+  // https://www.di-mgt.com.au/rsa_alg.html
   initial begin
     base=65;
     modulus=3233;

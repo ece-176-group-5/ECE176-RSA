@@ -1,0 +1,60 @@
+`timescale 1ns/1ns
+
+module RSA_2_tb;
+  wire [63:0] HEX;
+  wire [31:0] data;
+  reg [3:0] KEY;
+  reg [17:0] SW;
+  reg clk, reset;
+
+  integer i;
+
+  Top_Module M1 (
+    .HEX,
+    .data,
+    .KEY, .SW,
+    .clk, .reset
+  );
+
+  initial begin
+    {KEY, SW} = 0;
+    clk = 0;
+    reset = 1;
+    #100
+    reset = 0;
+    #100
+    KEY = 1;
+    #100
+    SW = 3;
+    KEY = 2;
+    #100
+    KEY = 4;
+    #100
+    KEY = 8;
+    #100
+    
+    if(data != SW) $display("Error: data = %h, SW = %h", data, SW);
+
+    reset =1;
+    #100
+    reset =0;
+    #100
+    KEY=1;
+    #100
+    SW=85;
+    KEY=2;
+    #100
+    KEY=4;
+    #100
+    KEY=8;
+    #100
+    if(data != SW) $display("Error: data = %h, SW = %h", data, SW);
+
+    end // end of initial
+
+  always #5 clk = ~clk;
+
+endmodule
+
+
+

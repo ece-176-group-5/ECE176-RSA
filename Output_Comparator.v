@@ -17,13 +17,6 @@ parameter size=4;
     d=d_w;
     $display("n=%d, e=%d, d=%d", n, e, d);
   end
-/* else if(Load==0) begin
-    n=0;
-    e=0;
-    d=0;
-    done=0;
-  end
-  */
   else
     done=0;
   end

@@ -1,6 +1,6 @@
 module Prime_Number_Generator_Single(d_possible, clk);
 
-parameter n = 255;  // Limit for a prime number
+parameter n = 512;  // Limit for a prime number
 parameter m = 5;    // How many bits the value needs
 
 output reg [(2*m)-1:0] d_possible;

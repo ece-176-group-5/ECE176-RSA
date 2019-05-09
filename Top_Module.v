@@ -1,12 +1,13 @@
 module Top_Module(
   output [63:0] HEX,
+  output [31:0] data,//
   input [3:0] KEY,
   input [17:0] SW,
   input clk, reset
 );
 
   wire [2:0] data_control;
-  wire [31:0] data;
+ // wire [31:0] data; //data is now an output for the testbenches
   wire done;
 
   Controller CTR(.data_control, .keys(KEY), .clk, .reset);

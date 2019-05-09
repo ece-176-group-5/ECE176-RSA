@@ -5,7 +5,7 @@ module Key_Generator_tb();
   wire [(size-1):0] e;
   wire [(2*size-1):0] n,d;
   wire done;
-  Key_Generator #(.size(size))t1(.n, .e, .d, .done, .st, .clk, .reset);
+  Key_Generator #(.size(size)) t1(.n, .e, .d, .done, .st, .clk, .reset);
   
   initial begin
     clk =0;
@@ -28,6 +28,7 @@ module Key_Generator_tb();
     #80
     reset=0;
   end
+  $stop;
 
   always #10 clk=~clk;
   
